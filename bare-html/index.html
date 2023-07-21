@@ -4,10 +4,11 @@
     <title>Switch Problem - HTML</title>
     <script>
       function btnOnClick(event) {
+        if (event.target.classList.contains("active")) {
+          event.target.classList.toggle('active');
+          return;
+        }
         [...event.target.parentNode.children].forEach((btn) => {
-          if (event.target.classList.contains("active")) {
-            return;
-          }
           if (btn.classList.contains("active")) {
             btn.classList.toggle("active");
           }

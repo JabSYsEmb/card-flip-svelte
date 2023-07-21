@@ -1,0 +1,9 @@
+div.card--list {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  display: flex;
+  height: auto;
+  gap: 20px;
+}

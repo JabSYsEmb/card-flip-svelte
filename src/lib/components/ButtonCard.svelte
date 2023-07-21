@@ -17,7 +17,6 @@
     }
     $activeId = componentId;
   }
-  $: console.log(active);
 </script>
 
 <div class:active>

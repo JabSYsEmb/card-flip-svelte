@@ -18,5 +18,5 @@ button:hover {
 }
 
 .active {
-  transform: rotateY(180deg);
+  transform: rotatey(180deg);
 }

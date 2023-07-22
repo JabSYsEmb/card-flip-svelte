@@ -5,7 +5,7 @@
   let id = 0;
 </script>
 
-<script>
+<script lang="ts">
   const componentId = id++;
 
   $: active = $activeId === componentId;
@@ -29,10 +29,12 @@
   div {
     border: 1px solid black;
     border-radius: 15px;
+    background: hsl(0, 100%, 100%);
+    margin: 10px;
   }
 
   div:hover {
-    background: hsla(0, 100%, 40%, 0.01);
+    background: hsla(0, 100%, 90%);
   }
 
   div.active {

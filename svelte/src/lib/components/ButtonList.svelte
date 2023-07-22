@@ -2,9 +2,20 @@
   import ButtonCard from "./ButtonCard.svelte";
 </script>
 
-<ButtonCard />
-<ButtonCard />
-<ButtonCard />
-<ButtonCard />
-<ButtonCard />
-<ButtonCard />
+<div>
+  <ButtonCard />
+  <ButtonCard />
+  <ButtonCard />
+  <ButtonCard />
+  <ButtonCard />
+  <ButtonCard />
+</div>
+
+<style>
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+</style>

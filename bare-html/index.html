@@ -5,7 +5,7 @@
     <script>
       function btnOnClick(event) {
         if (event.target.classList.contains("active")) {
-          event.target.classList.toggle('active');
+          event.target.classList.toggle("active");
           return;
         }
         [...event.target.parentNode.children].forEach((btn) => {
@@ -23,7 +23,7 @@
   </body>
 
   <script>
-    const numberOfBtns = 5;
+    const numberOfBtns = 500;
     const cardList = document.getElementById("cardList");
 
     cardList.innerHTML = Array(numberOfBtns)
@@ -95,5 +95,17 @@
 
   .active::after {
     content: "❌";
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: red;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: blue;
   }
 </style>

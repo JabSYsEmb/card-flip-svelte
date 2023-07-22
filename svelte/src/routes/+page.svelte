@@ -17,10 +17,10 @@
 
 <style>
   div.upper--main {
-    height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: calc(100vh - 200px);
   }
 
   div.button--list::before {

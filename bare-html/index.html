@@ -8,25 +8,36 @@
           event.target.classList.toggle("active");
           return;
         }
-        [...event.target.parentNode.children].forEach((btn) => {
-          if (btn.classList.contains("active")) {
-            btn.classList.toggle("active");
+        [...document.querySelectorAll('button[onclick^="btnOnClick"]')].forEach(
+          (btn) => {
+            if (btn.classList.contains("active")) {
+              btn.classList.toggle("active");
+            }
           }
-        });
+        );
         event.target.classList.toggle("active");
       }
     </script>
   </head>
 
   <body>
+    <div id="header" class="card--list"></div>
     <div id="cardList" class="card--list"></div>
   </body>
 
   <script>
-    const numberOfBtns = 500;
+    const numberOfBtns = 4;
     const cardList = document.getElementById("cardList");
+    const headerList = document.getElementById("header");
 
     cardList.innerHTML = Array(numberOfBtns)
+      .fill()
+      .map((_, idx) => {
+        return `<button onclick="btnOnClick(event)"></button>`;
+      })
+      .join("");
+
+    headerList.innerHTML = Array(numberOfBtns)
       .fill()
       .map((_, idx) => {
         return `<button onclick="btnOnClick(event)"></button>`;
@@ -40,6 +51,10 @@
   body {
     margin: 0;
     padding: 0;
+  }
+
+  div#header {
+    background: hsla(0, 100%, 50%, 0.3);
   }
 
   body {

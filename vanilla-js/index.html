@@ -20,15 +20,24 @@
     </script>
   </head>
 
-  <body>
-    <div id="header" class="card--list"></div>
-    <div id="cardList" class="card--list"></div>
+  <body class="flex flex-column justify-center">
+    <div id="header" class="flex justify-center">
+      <div id="headerList"></div>
+    </div>
+    <div id="body" class="flex justify-between grow">
+      <div class="grow flex align-center justify-center">
+        <div id="cardList"></div>
+      </div>
+      <div class="flex align-center justify-center">
+        <button onclick="btnOnClick(event)"></button>
+      </div>
+    </div>
   </body>
 
   <script>
     const numberOfBtns = 4;
     const cardList = document.getElementById("cardList");
-    const headerList = document.getElementById("header");
+    const headerList = document.getElementById("headerList");
 
     cardList.innerHTML = Array(numberOfBtns)
       .fill()
@@ -53,37 +62,38 @@
     padding: 0;
   }
 
-  div#header {
-    background: hsla(0, 100%, 50%, 0.3);
-  }
-
   body {
-    justify-content: center;
+    height: 100vh;
+  }
+
+  .flex-column {
     flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    display: flex;
-    height: 100%;
   }
 
-  div.card--list {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
+  .flex {
     display: flex;
-    height: auto;
-    gap: 20px;
   }
 
-  div.card--list {
+  .justify-center {
     justify-content: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .align-center {
     align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    display: flex;
-    height: auto;
-    gap: 20px;
+  }
+
+  .grow {
+    flex-grow: 1;
+  }
+
+  .border {
+    border-radius: 10px;
+    border-color: black;
+    border-width: 1px;
   }
 
   button::after {

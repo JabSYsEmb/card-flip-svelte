@@ -21,15 +21,18 @@
   </head>
 
   <body class="flex flex-column justify-center">
-    <div id="header" class="flex justify-center">
-      <div id="headerList"></div>
+    <div class="flex justify-center">
+      <div id="headerList" class="border"></div>
     </div>
-    <div id="body" class="flex justify-between grow">
+    <div class="flex justify-between grow">
       <div class="grow flex align-center justify-center">
-        <div id="cardList"></div>
+        <div id="cardList" class="border"></div>
       </div>
       <div class="flex align-center justify-center">
-        <button onclick="btnOnClick(event)"></button>
+        <div id="sideList" class="border">
+          <button onclick="btnOnClick(event)"></button>
+          <button onclick="btnOnClick(event)"></button>
+        </div>
       </div>
     </div>
   </body>
@@ -56,14 +59,9 @@
 </html>
 
 <style>
-  html,
   body {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    height: 100vh;
+    height: calc(100vh - 20px);
+    margin: 10px;
   }
 
   .flex-column {
@@ -91,9 +89,30 @@
   }
 
   .border {
+    border: 1px solid black;
     border-radius: 10px;
-    border-color: black;
-    border-width: 1px;
+  }
+
+  div#headerList::before {
+    content: "First Group";
+  }
+
+  div#cardList::before {
+    content: "Second Group";
+  }
+
+  div#sideList::before {
+    content: "Third Group";
+  }
+
+  div#cardList::before,
+  div#sideList::before,
+  div#headerList::before {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid black;
   }
 
   button::after {

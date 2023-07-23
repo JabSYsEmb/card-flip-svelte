@@ -136,6 +136,12 @@
     background: hsla(180, 100%, 50%, 0.4);
   }
 
+  div#cardList:has(.active)::before,
+  div#sideList:has(.active)::before,
+  div#headerList:has(.active)::before {
+    background: hsla(280, 100%, 50%, 0.4);
+  }
+
   button::after {
     content: "✅";
   }
@@ -173,6 +179,4 @@
   ::-webkit-scrollbar-track {
     background: blue;
   }
-
-
 </style>

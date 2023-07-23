@@ -113,6 +113,27 @@
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid black;
+    border-top-left-radius: 10;
+    border-top-right-radius: 10;
+  }
+
+  div#headerList:hover::before,
+  div#sideList:hover::before,
+  div#cardList:hover::before {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  div#sideList:hover::before {
+    background: hsla(0, 100%, 50%, 0.4);
+  }
+
+  div#headerList:hover::before {
+    background: hsla(90, 100%, 50%, 0.4);
+  }
+
+  div#cardList:hover::before {
+    background: hsla(180, 100%, 50%, 0.4);
   }
 
   button::after {
@@ -152,4 +173,6 @@
   ::-webkit-scrollbar-track {
     background: blue;
   }
+
+
 </style>
